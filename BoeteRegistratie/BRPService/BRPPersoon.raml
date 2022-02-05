@@ -1,0 +1,35 @@
+#%RAML 1.0
+title: Example API
+version: v1
+baseUri: https://localhost:5002/
+mediaType: application/json
+types:
+  brpPersoon:
+    properties:
+      id:
+        type: number
+      bsnNummer:
+        type: number
+      geslacht:
+        type: string
+      initialen:
+        type: string
+      achternaam:
+        type: string
+      straatnaam:
+        type: string
+      nummer:
+        type: integer
+      postcode:
+        type: string
+      woonplaats:
+        type: string
+      ibannummer:
+        type: string
+
+/PersoonsGegevens/{BSNNummer}:
+  get:
+    responses:
+      200:
+        body:
+          type: brpPersoon

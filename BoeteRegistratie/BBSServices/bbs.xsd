@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema xmlns:tns="http://service.bbs.hanze.nl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" 		version="1.0" targetNamespace="http://service.bbs.hanze.nl/">
+
+	<xs:element name="BBSBericht" type="tns:BBSBericht" />
+
+	<xs:complexType name="BBSBericht">
+		<xs:sequence>
+			<xs:element name="kenteken" type="xs:string" />
+			<xs:element name="snelheid" type="xs:int" />
+			<xs:element name="maximumSnelheid" type="xs:int" />
+			<xs:element name="kenmerk" type="xs:string" />
+			<xs:element name="persoon" type="tns:BBSPersoon" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="BBSRegistratie">
+		<xs:sequence>
+			<xs:element name="bsn" type="xs:long" />
+			<xs:element name="kenteken" type="xs:string"  />
+			<xs:element name="snelheid" type="xs:int" />
+			<xs:element name="maximumSnelheid" type="xs:int" />
+			<xs:element name="zwaartepunten" type="xs:int" />
+			<xs:element name="kenmerk" type="xs:string" />
+			<xs:element name="status" type="xs:string" />
+			<xs:element name="datum" type="xs:date" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="BBSPersoon">
+		<xs:sequence>
+			<xs:element name="bsn" type="xs:long" />
+			<xs:element name="geslacht" type="xs:string" />
+			<xs:element name="initialen" type="xs:string" />
+			<xs:element name="achternaam" type="xs:string" />
+			<xs:element name="straatnaam" type="xs:string" />
+			<xs:element name="straatnummer" type="xs:int" />
+			<xs:element name="plaatsnaam" type="xs:string" />
+			<xs:element name="postcode" type="xs:string" />
+			<xs:element name="ibannummer" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
+</xs:schema>

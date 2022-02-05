@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema xmlns:tns="http://service.rdw.web.hanze.nl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" 		version="1.0" targetNamespace="http://service.rdw.web.hanze.nl/">
+
+	<xs:element name="GetInfo" type="tns:Kenteken" />
+
+	<xs:element name="GetInfoResponse" type="tns:GetInfoResponse" />
+
+	<xs:complexType name="Kenteken">
+		<xs:sequence>
+			<xs:element name="kenteken" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="GetInfoResponse">
+		<xs:sequence>
+			<xs:element name="return" type="tns:Info" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Info">
+		<xs:sequence>
+			<xs:element name="statusInfoAanvraag" type="xs:string" />
+			<xs:element name="voertuig" type="tns:Voertuig" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Voertuig">
+		<xs:sequence>
+			<xs:element name="bsn" type="xs:long" />
+			<xs:element name="chassisNummer" type="xs:string" minOccurs="0" />
+			<xs:element name="kenteken" type="xs:string" minOccurs="0" />
+			<xs:element name="kleur" type="xs:string" minOccurs="0" />
+			<xs:element name="model" type="tns:Model" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Model">
+		<xs:sequence>
+			<xs:element name="merkNaam" type="xs:string" minOccurs="0" />
+			<xs:element name="motorInhoud" type="xs:float" />
+			<xs:element name="typeAanduiding" type="xs:string" minOccurs="0" />
+			<xs:element name="typeMotor" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
+</xs:schema>
